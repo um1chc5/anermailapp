@@ -11,7 +11,7 @@ function fetchJsonData(url: string) {
 
 async function fetchMessages() {
   try {
-    const messages = await fetchJsonData('/public/data/messages.json')
+    const messages = await fetchJsonData('/dist/assets/messages.json')
     return messages as Message[]
   } catch (error) {
     return []
@@ -20,7 +20,7 @@ async function fetchMessages() {
 
 async function fetchUsers() {
   try {
-    const users = await fetchJsonData('/public/data/users.json')
+    const users = await fetchJsonData('/dist/assets/users.json')
     return users
   } catch (error) {
     return []
