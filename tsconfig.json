@@ -19,10 +19,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "dist/assets/messages.json": ["src/data/messages.json"],
+      "dist/assets/users.json": ["src/data/users.json"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
-
-
