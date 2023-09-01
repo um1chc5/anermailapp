@@ -11,8 +11,8 @@ function fetchJsonData(url: string) {
 
 async function fetchMessages() {
   try {
-    const messages = (await fetchJsonData('/src/data/messages.json')) as Message[]
-    return messages
+    const messages = await fetchJsonData('/public/data/messages.json')
+    return messages as Message[]
   } catch (error) {
     return []
   }
@@ -20,7 +20,7 @@ async function fetchMessages() {
 
 async function fetchUsers() {
   try {
-    const users = await fetchJsonData('/src/data/users.json')
+    const users = await fetchJsonData('/public/data/users.json')
     return users
   } catch (error) {
     return []

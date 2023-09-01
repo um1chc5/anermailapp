@@ -42,11 +42,12 @@ function EmailBody() {
   // Vì số lượng file messages không quá nhiều và offline nên em tạm gọi hết ra ạ
   // Nếu fetch từ API thì nên nên chỉ fetch theo những category được kích hoạt riêng
   useEffect(() => {
-    if (!lsData.messages) {
+    if (!lsData.messages[0]) {
       console.log(lsData.messages)
       ;(async () => {
         try {
           const messages = await fetchMessages()
+          console.log(messages)
           setMessages(messages)
         } catch (error) {
           console.log(error)
@@ -63,6 +64,7 @@ function EmailBody() {
       ...lsData,
       messages: messages
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages])
 
   const messagesContextValues = { filterMessages, setMessages, params }
